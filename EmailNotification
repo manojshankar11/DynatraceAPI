@@ -22,3 +22,28 @@ curl -X POST "https://your-dynatrace-domain/api/v1/problemNotifications" \
                }
            ]
        }'
+{
+  "email": {
+    "enabled": true,
+    "sender": {
+      "address": "sender@example.com",
+      "displayName": "Dynatrace Notifications"
+    },
+    "managementZones": [
+      "management-zone-1",
+      "management-zone-2"
+    ],
+    "recipients": [
+      "recipient1@example.com",
+      "recipient2@example.com"
+    ],
+    "ccRecipients": [
+      "cc1@example.com",
+      "cc2@example.com"
+    ],
+    "bccRecipients": [
+      "bcc1@example.com",
+      "bcc2@example.com"
+    ]
+  }
+}
