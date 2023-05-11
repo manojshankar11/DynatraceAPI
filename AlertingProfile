@@ -1,0 +1,30 @@
+curl -X POST "https://your-dynatrace-domain/api/config/v1/alertingProfiles" \
+     -H "Authorization: Api-Token YOUR_API_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "name": "My Alerting Profile",
+           "managementZoneId": "YOUR_MANAGEMENT_ZONE_ID",
+           "severityRules": [
+               {
+                   "severityLevel": "AVAILABILITY",
+                   "delayMinutes": 5,
+                   "tagFilters": [
+                       {
+                           "context": "CONTEXTLESS",
+                           "key": "environment",
+                           "value": "production",
+                           "type": "EQUALS"
+                       }
+                   ]
+               }
+           ],
+           "eventFilterConfig": {
+               "eventFilters": [
+                   {
+                       "eventType": "CUSTOM_ALERT",
+                       "description": "My Custom Alert",
+                       "titleFilter": "Critical"
+                   }
+               ]
+           }
+       }'
