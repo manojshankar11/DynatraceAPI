@@ -1,0 +1,23 @@
+{
+  "displayName": "Example Request Attribute",
+  "description": "This is an example request attribute",
+  "enabled": true,
+  "requestAttributeType": "STRING",
+  "valueFormat": "TEXT",
+  "dataPrivacy": "NONE",
+  "stored": true,
+  "customMatchers": [
+    {
+      "type": "STRING",
+      "matchType": "CONTAINS",
+      "value": "example"
+    }
+  ],
+  "requestAttributeSources": [
+    {
+      "source": "REQUEST_HEADER",
+      "key": "X-Request-Header",
+      "value": "example-header"
+    }
+  ]
+}
